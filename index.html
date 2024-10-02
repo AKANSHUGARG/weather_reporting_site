@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Weather App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+   
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand">weather forecast🌦️</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">LogIn/SignUp</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            More Options
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="weather news.html">Weather News</a></li>
+                            <li><a class="dropdown-item" href="severe weather.html">Severe Weather</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="health.html">Health</a></li>
+                            <li><a class="dropdown-item" href="sports.html">Sports</a></li>
+                            <li><a class="dropdown-item" href="digital advertising.html">Digital Advertising</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+                <form class="d-flex" role="search">
+                    
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="city">
+                    <button id="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <h1 class="my-4 text-center">Weather for <span id="cityName"></span></h1>
+        <main>
+            <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm">
+                        <div class="card-header py-3">
+                            <h4 class="my-0 fw-normal">Temperatures</h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title"><span id="temp2"></span><small
+                                    class="text-body-secondary fw-light"><span>&#8451;</span></small></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>Temperature is <span id="temp"></span></li>
+                                <li>Max Temperature is <span id="max_temp"></span></li>
+                                <li>Min Temperature is <span id="min_temp"></span></li>
+                               
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-primary"onclick="window.location.href='login.html'">Sign up for free</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm">
+                        <div class="card-header py-3">
+                            <h4 class="my-0 fw-normal">Humidity Info</h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title"><span id="humidity2"></span><small
+                                    class="text-body-secondary fw-light">%</small></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>Cloud PCT is <span id="cloud_pct"></span></li>
+                                <li>Feels like is <span id="feels_like"></span></li>
+                                <li>Humidity is <span id="humidity"></span></li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-primary">Get started </button></div>
+
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm ">
+                        <div class="card-header py-3 ">
+                            <h4 class="my-0 fw-normal">Wind Info</h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title"><span id="wind_speed2"></span><small
+                                    class="text-body-secondary fw-light">km/hr</small></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>Wind Speed is <span id="wind_speed"></span></li>
+                                <li>Sunrise time is 6.20 Am<span id="sunrise"></span></li>
+                                <li>Sunset time is 6.03 Pm <span id="sunset"></span></li>
+                                
+                            </ul>
+                            <button type="button" class="w-100 btn btn-lg btn-primary"onclick="window.location.href='contact us.html'">Contact us</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="display-6 text-center mb-4">Weather of big cities</h2>
+
+            <div class="table-responsive">
+                <table class="table text-center">
+                    <thead>
+                        <tr>
+                            <th style="width: 34%;"></th>
+                            <th style="width: 22%;">Cloud_pct</th>
+                            <th style="width: 22%;">Feels_like</th>
+                            <th style="width: 22%;">Humidity</th>
+                            <th style="width: 22%;">Max_temp</th>
+                            <th style="width: 22%;">Min_temp</th>
+                            <th style="width: 22%;">Sunrise</th>
+                            <th style="width: 22%;">Sunset</th>
+                            <th style="width: 22%;">Temp</th>
+                            <th style="width: 22%;">Wind_degrees</th>
+                            <th style="width: 22%;">Wind_speed</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row" class="text-start">Delhi</th>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+
+                        </tr>
+
+                        <tr>
+                            <th scope="row" class="text-start">Mumbai</th>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>4</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>0</td>
+
+                        </tr>
+
+                        <tr>
+                            <th scope="row" class="text-start">Channdigarh</th>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>5</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>2</td>
+
+                        </tr>
+
+                        <tr>
+                            <th scope="row" class="text-start">Banglore</th>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>4</td>
+
+                        </tr>
+
+                        <tr>
+                            <th scope="row" class="text-start">Chennai</th>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>4</td>
+
+                        </tr>
+                       
+                    </tbody>
+                </table>
+
+              
+            </div>
+        </main>
+    </div>
+    <footer class="text-center bg-body-tertiary">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+  
+    
+    <div class="google map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d220011.32028023142!2d76.6324027!3d30.5018937!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1695750407701!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+
+
+
+<footer>
+    <div class="foot-panel1">
+          <a style="color: white;" href="index.html">Back To Top</a>
+    </div>
+
+    <div class="foot-panel2">
+
+        <ul>
+            <p>COMPANY</p>
+            <a href="about us.html">About Us</a> 
+            <a href="digital advertising.html">Digital Advertising</a>
+            <a href="carrers.html">Careers</a>
+            <a href="press.html">Press</a>
+           <a href="contact us.html">Contact Us</a>
+        </ul>
+
+        <ul>
+            <p>APPS AND DOWNLOADS</p>
+           <a href="coming soon.html">I Phone App</a>
+            <a href="coming soon.html">Android App</a>
+            <a href="coming soon.html">See All Apps and Downloads</a>
+            
+        </ul>
+
+
+        <ul>
+            <p>SUBSCRIPTION SERVICES</p>
+           <a href="professional.html">Weather Forecast Proffessional</a>
+            <a href="premium.html">Weather Forecast Premium</a>
+        </ul>
+        
+
+        <ul>
+            <p>MORE</p>
+           <a href="health.html">Health</a>
+            <a href="severe weather.html"></a>
+            <a href="space and astronomy.html">Space and astronomy</a>
+            <a href="sports.html">Sports</a>
+           <a href="travel.html">Travel</a>
+            <a href="weather news.html">Weather News</a>
+            <a href="severe weather.html">      Severe weather</a>
+        </ul>
+
+       
+    </div>
+
+
+    <div class="foot-panel3">
+        <div class="logo"><h6>WEATHER FORECAST🌦️</h6></div>
+    </div>
+
+    <div class="foot-panel4">
+        <div class="pages">
+            <a>Conditions of use </a>
+            <a>Privacy Notice</a>
+            <a>your ads privacy choices</a>
+        </div>
+        <div class="copyright">
+          <a style="color: white ; " href ="copyright.html">© 2023, Weather Forecast, Inc. or its affiliates</a>
+            </div>
+    </div>
+</footer>
+</body>
+</html>
